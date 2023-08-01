@@ -4,9 +4,21 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  modularizeImports: {
+    '@mui/icons-material': {
+      transform: '@mui/icons-material/{{member}}',
+    },
+  },
   images: {
-    domains: ['cos.codefe.top'],
-  }
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+        port: '',
+        pathname: '/random',
+      },
+    ],
+  },
 }
 
 export default nextConfig
